@@ -1,6 +1,8 @@
 package examples;
 
+import io.qameta.allure.Link;
 import org.apache.commons.io.IOUtils;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import utils.PropertyReader;
 
@@ -16,14 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class ReadResourcesTest {
-
+    @Link("Cool video")
     @Test
     public void readPropertiesfromResourcesTest() {
         Properties properties = PropertyReader.getProperties();
         String browser = properties.getProperty("browser");
         assertEquals("chrome", browser);
     }
-
     @Test
     public void readTextFromResourcesTest() {
         String filePath = "attachments/text.txt";
@@ -45,7 +46,6 @@ public class ReadResourcesTest {
 
         assertTrue( text.contains("random text"), text + "is not what we expected");
     }
-
     @Test
     public void simplifiedResourceRead() {
         String filePath = "attachments/text.txt";

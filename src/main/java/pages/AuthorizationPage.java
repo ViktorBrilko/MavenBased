@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -45,6 +46,7 @@ public class AuthorizationPage {
         return this;
     }
 
+    @Step ("Step for starting registration")
     public RegistrationPage startRegistration(String email) {
         WebElement registrationEmailInput = driver.findElement(registrationInputLocator);
         registrationEmailInput.sendKeys(email);

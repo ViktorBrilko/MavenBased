@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +27,7 @@ public class RegistrationPage {
     By mobilePhoneLocator = By.id("phone_mobile");
     By submitButtonLocator = By.id("submitAccount");
 
+    @Step ("Step for acomplishing registration")
     public MyAccountPage completeRegistration(String firstName, String lastname, String password, String address, String city, String postalCode, String mobilePhone) {
         WebElement title = driver.findElement(titleLocator);
         title.click();

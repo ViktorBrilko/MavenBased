@@ -2,17 +2,18 @@ package automationpractice;
 
 import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import pages.AuthorizationPage;
 import pages.HomePage;
 import pages.MyAccountPage;
 import pages.RegistrationPage;
 import utils.PropertyReader;
 
+@Epic("Witcher 3 tests")
 public class CreateUserTest extends BaseTest {
     Fairy fairy = Fairy.create();
     Person person = fairy.person();
@@ -20,6 +21,7 @@ public class CreateUserTest extends BaseTest {
     String city = "Homel";
     String postalCode = "66666";
 
+    @Story("Skellige isles")
     @Test
     public void registrationTest() {
         driver.get(PropertyReader.BASEURL);
