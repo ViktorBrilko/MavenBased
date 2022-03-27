@@ -4,6 +4,9 @@ import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pages.AuthorizationPage;
 import pages.HomePage;
 import pages.MyAccountPage;
@@ -34,5 +37,9 @@ public class CreateUserTest extends BaseTest {
         String account = myAccountPage.getAuthorizedAccount();
         String userName = person.getFirstName() + " " + person.getLastName();
         Assertions.assertEquals(userName, account);
+
+
+
+
     }
 }
