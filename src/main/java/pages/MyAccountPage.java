@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ public class MyAccountPage {
         this.driver = driver;
     }
 
+    @Step ("Checking successful login")
     public String getAuthorizedAccount() {
         return driver.findElement(accountLocator).getText();
     }
