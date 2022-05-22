@@ -25,7 +25,7 @@ public class AuthorizationTest extends BaseTest {
         log.info("Сейчас мы здесь");
         log.debug("А теперь тут");
         driver.get(PropertyReader.BASEURL);
-        HomePage homePage = new HomePage(driver).waitOnPage();
+        HomePage homePage = (HomePage) new HomePage(driver).waitOnPage();
         AuthorizationPage authorizationPage = homePage.clickSignIn();
         authorizationPage.checkOnPage();
         MyAccountPage myAccountPage = authorizationPage.doAuthorize("skillupdemo@gmail.com", "12345");

@@ -25,7 +25,7 @@ public class CreateUserTest extends BaseTest {
     @Test
     public void registrationTest() {
         driver.get(PropertyReader.BASEURL);
-        HomePage homePage = new HomePage(driver).waitOnPage();
+        HomePage homePage = (HomePage) new HomePage(driver).waitOnPage();
         AuthorizationPage authorizationPage = homePage.clickSignIn();
         RegistrationPage registrationPage = authorizationPage.startRegistration(person.getEmail());
         MyAccountPage myAccountPage = registrationPage.completeRegistration(

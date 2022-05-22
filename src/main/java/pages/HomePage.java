@@ -10,14 +10,12 @@ import utils.PropertyReader;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
-public class HomePage {
-    private final WebDriver driver;
+public class HomePage extends BasePage{
     private final String pageURL = PropertyReader.BASEURL;
 
-    private final By signInButton = By.className("login");
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public HomePage open() {
@@ -25,10 +23,7 @@ public class HomePage {
         return checkOnPage();
     }
 
-    public AuthorizationPage clickSignIn() {
-        driver.findElement(signInButton).click();
-        return new AuthorizationPage(driver);
-    }
+
 
     public HomePage checkOnPage() {
         Assertions.assertEquals("My Store", driver.getTitle(), "This is not Home Page" +
@@ -36,15 +31,7 @@ public class HomePage {
         return this;
     }
 
-    public HomePage waitOnPage() {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.pollingEvery(Duration.ofSeconds(3));
-        wait.withTimeout(Duration.ofSeconds(30));
-        wait.ignoring(NoSuchElementException.class);
 
-        wait.until(ExpectedConditions.elementToBeClickable(signInButton));
-        return this;
-    }
 
 
 }

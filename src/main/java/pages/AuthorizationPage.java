@@ -6,20 +6,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class AuthorizationPage {
+public class AuthorizationPage extends BasePage{
     private final String pageURL = "http://automationpractice.com/index.php?controller=authentication";
-    private final WebDriver driver;
 
+    //относится к авторизации юзера
     public By signInLocator = By.id("SubmitLogin");
     public By emailInputLocator = By.cssSelector("input#email");
     public By passwordInputLocator = By.xpath("//input[@id='passwd']");
     public By navigationPanelLocator = By.cssSelector("span.navigation_page");
 
+    //относится к созданию юзера
     public By registrationInputLocator = By.id("email_create");
     public By registrationButtonLocator = By.id("SubmitCreate");
 
     public AuthorizationPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public AuthorizationPage open() {
