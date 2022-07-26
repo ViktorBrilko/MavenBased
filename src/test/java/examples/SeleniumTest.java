@@ -4,6 +4,7 @@ import automationpractice.AuthorizationTest;
 import automationpractice.BaseTest;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -18,13 +19,13 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SeleniumTest extends BaseTest {
-
+    @Disabled
     @Test
     public void initDriverTest() {
         driver.get("https://google.com");
         assertTrue(driver.getCurrentUrl().contains("google.com"));
     }
-
+    @Disabled
     @Test
     public void useDriverManager() {
         driver.get("http://automationpractice.com/");
@@ -33,7 +34,7 @@ public class SeleniumTest extends BaseTest {
             signInButton.click();
         assertTrue(driver.getCurrentUrl().contains("authentication"));
     }
-
+    @Disabled
     @Test
     public void addProductsToCartWithCookies() throws IOException {
         driver.get("http://automationpractice.com/");
